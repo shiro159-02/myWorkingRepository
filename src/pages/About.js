@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const About = () => {
-  <div>
-  hi
-  </div>
+  return (
+    <h1>About page</h1>
+  )
 }

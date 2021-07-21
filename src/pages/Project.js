@@ -1,5 +1,7 @@
 import React from 'react';
 
 export const Project = () => {
-  <h1>Page project</h1>
+  return (
+    <h1>Project page</h1>
+  )
 }

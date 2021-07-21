@@ -11,7 +11,7 @@ import {
   Link
 } from "react-router-dom";
 
-
+import {Home} from './pages/Home';
 import {About} from './pages/About';
 import {Project} from './pages/Project';
 
@@ -21,7 +21,7 @@ function App() {
     <Router>
       <NaviBar />
       <Switch>
-
+        <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/project" component={Project} />
       </Switch>
