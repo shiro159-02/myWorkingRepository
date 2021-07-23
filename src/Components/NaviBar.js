@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, Button, Container } from 'react-bootstrap';
+import { Navbar, Nav, Button, Container, Modal, Form } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -15,7 +15,10 @@ const Styles = styled.div `
 
 export default function NaviBar() {
 
-  
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
   <>
@@ -38,7 +41,7 @@ export default function NaviBar() {
       </Container>
   </Navbar>
   </Styles>
-  <Model show={show} onHide={handleClose}>
+  <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
           <Modal.Title>Log in</Modal.Title>
       </Modal.Header>
@@ -54,11 +57,11 @@ export default function NaviBar() {
                   <Form.Control type="password" placeholder="Enter password"/>
               </Form.Group>
               <Form.Group controlId="fromBasicCheckbox">
-                  <Form.Control type="checkbox" label="Remember me"/>
+                  <Form.Check type="checkbox" label="Remember me" />
               </Form.Group>
           </Form>
       </Modal.Body>
-  </Model>
+  </Modal>
   </>
   );
 }
